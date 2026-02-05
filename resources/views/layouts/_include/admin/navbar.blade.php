@@ -20,37 +20,18 @@
 
 
           <li class="nav-item">
-              <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                  <i class="bi bi-people"></i><span>Usuários</span><i class="bi bi-chevron-down ms-auto"></i>
-              </a>
-              <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                  <li>
-                      <a href="components-alerts.html">
-                          <i class="bi bi-circle"></i><span>Listar</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="components-accordion.html">
-                          <i class="bi bi-circle"></i><span>Cadastrar</span>
-                      </a>
-                  </li>
-              </ul>
-          </li><!-- End Components Nav -->
-
-
-          <li class="nav-item">
               <a class="nav-link collapsed" data-bs-target="#plans-nav" data-bs-toggle="collapse" href="#">
                   <i class="bi bi-menu-button-wide"></i><span>Planos</span><i class="bi bi-chevron-down ms-auto"></i>
               </a>
               <ul id="plans-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
                       <a href="components-alerts.html">
-                          <i class="bi bi-circle"></i><span>Listar</span>
+                          <i class="bi bi-circle"></i><span>Lista</span>
                       </a>
                   </li>
                   <li>
                       <a href="components-accordion.html">
-                          <i class="bi bi-circle"></i><span>Cadastrar</span>
+                          <i class="bi bi-circle"></i><span>Novo</span>
                       </a>
                   </li>
               </ul>
@@ -64,12 +45,12 @@
               <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
                       <a href="forms-elements.html">
-                          <i class="bi bi-circle"></i><span>Listar</span>
+                          <i class="bi bi-circle"></i><span>Lista</span>
                       </a>
                   </li>
                   <li>
                       <a href="forms-layouts.html">
-                          <i class="bi bi-circle"></i><span>Cadastrar</span>
+                          <i class="bi bi-circle"></i><span>Novo</span>
                       </a>
                   </li>
 
@@ -83,12 +64,12 @@
               <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
                       <a href="tables-general.html">
-                          <i class="bi bi-circle"></i><span>Listar</span>
+                          <i class="bi bi-circle"></i><span>Lista</span>
                       </a>
                   </li>
                   <li>
                       <a href="tables-data.html">
-                          <i class="bi bi-circle"></i><span>Cadastrar</span>
+                          <i class="bi bi-circle"></i><span>Novo</span>
                       </a>
                   </li>
               </ul>
@@ -101,12 +82,12 @@
               <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
                       <a href="charts-chartjs.html">
-                          <i class="bi bi-circle"></i><span>Listar</span>
+                          <i class="bi bi-circle"></i><span>Lista</span>
                       </a>
                   </li>
                   <li>
                       <a href="charts-apexcharts.html">
-                          <i class="bi bi-circle"></i><span>Cadastrar</span>
+                          <i class="bi bi-circle"></i><span>Novo</span>
                       </a>
                   </li>
 
@@ -120,12 +101,12 @@
               <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
                       <a href="icons-bootstrap.html">
-                          <i class="bi bi-circle"></i><span>Listar</span>
+                          <i class="bi bi-circle"></i><span>Lista</span>
                       </a>
                   </li>
                   <li>
                       <a href="icons-remix.html">
-                          <i class="bi bi-circle"></i><span>Cadastrar</span>
+                          <i class="bi bi-circle"></i><span>Novo</span>
                       </a>
                   </li>
               </ul>
@@ -138,12 +119,12 @@
               <ul id="pages-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
                       <a href="pages-profile.html">
-                          <i class="bi bi-circle"></i><span>Listar</span>
+                          <i class="bi bi-circle"></i><span>Lista</span>
                       </a>
                   </li>
                   <li>
                       <a href="pages-faq.html">
-                          <i class="bi bi-circle"></i><span>Cadastrar</span>
+                          <i class="bi bi-circle"></i><span>Novo</span>
                       </a>
                   </li>
               </ul>
@@ -156,12 +137,12 @@
               <ul id="reports-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
                       <a href="reports-sales.html">
-                          <i class="bi bi-circle"></i><span>Listar</span>
+                          <i class="bi bi-circle"></i><span>Lista</span>
                       </a>
                   </li>
                   <li>
                       <a href="reports-expenses.html">
-                          <i class="bi bi-circle"></i><span>Cadastrar</span>
+                          <i class="bi bi-circle"></i><span>Novo</span>
                       </a>
                   </li>
 
@@ -175,12 +156,12 @@
               <ul id="clients-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
                       <a href="clients-list.html">
-                          <i class="bi bi-circle"></i><span>Listar</span>
+                          <i class="bi bi-circle"></i><span>Lista</span>
                       </a>
                   </li>
                   <li>
                       <a href="clients-add.html">
-                          <i class="bi bi-circle"></i><span>Cadastrar</span>
+                          <i class="bi bi-circle"></i><span>Novo</span>
                       </a>
                   </li>
               </ul>
@@ -193,12 +174,12 @@
               <ul id="receipt-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                   <li>
                       <a href="receipt-invoice.html">
-                          <i class="bi bi-circle"></i><span>Listar</span>
+                          <i class="bi bi-circle"></i><span>Lista</span>
                       </a>
                   </li>
                   <li>
                       <a href="receipt-create.html">
-                          <i class="bi bi-circle"></i><span>Cadastrar</span>
+                          <i class="bi bi-circle"></i><span>Novo</span>
                       </a>
                   </li>
 
@@ -207,6 +188,26 @@
           </li>
 
           <li class="nav-heading">Páginas</li>
+
+          <!-- start user Nav -->
+          <li class="nav-item">
+              <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                  <i class="bi bi-people"></i><span>Utilizadores</span><i class="bi bi-chevron-down ms-auto"></i>
+              </a>
+              <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li>
+                      <a href="{{ route('admin.users.index')}}">
+                          <i class="bi bi-eye"></i><span>Lista</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ route('admin.users.create')}}">
+                          <i class="bi bi-plus"></i><span>Novo</span>
+                      </a>
+                  </li>
+              </ul>
+          </li>
+          <!-- End user Nav -->
 
           <li class="nav-item">
               <a class="nav-link collapsed" href="users-profile.html">
