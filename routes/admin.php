@@ -6,9 +6,11 @@ use App\Http\Controllers\Admin\UserController;
 
 Route::middleware('auth')->name('admin.')->group(function () {
 
-    //start painel de controlo (dashborad) routes  
-    Route::get('/painel-controlo', [DashboardController::class, 'index'])->name('dasboard');
-    //end painel de controlo (dashborad) routes 
+    //start painel de controlo (dashboard) routes
+  Route::get('/painel-controlo', [DashboardController::class, 'index'])->name('dashboard');
+
+
+    //end painel de controlo (dashborad) routes
 
     //start Utilizador (user) Routes
     Route::prefix('utilizador')->group(function () {
