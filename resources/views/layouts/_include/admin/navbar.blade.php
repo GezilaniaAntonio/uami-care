@@ -19,23 +19,43 @@
 
 
 
-          <li class="nav-item">
+
+            <li class="nav-item">
               <a class="nav-link collapsed" data-bs-target="#plans-nav" data-bs-toggle="collapse" href="#">
                   <i class="bi bi-menu-button-wide"></i><span>Planos</span><i class="bi bi-chevron-down ms-auto"></i>
               </a>
               <ul id="plans-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
-                      <a href="components-alerts.html">
+                      <a href="{{ route('admin.plans.index') }}">
                           <i class="bi bi-circle"></i><span>Lista</span>
                       </a>
                   </li>
                   <li>
-                      <a href="components-accordion.html">
+                      <a href="{{ route('admin.plans.create') }}">
                           <i class="bi bi-circle"></i><span>Novo</span>
                       </a>
                   </li>
               </ul>
           </li>
+
+          <li class="nav-item">
+              <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+                  <i class="bi bi-shield-check"></i><span>Seguradoras</span><i class="bi bi-chevron-down ms-auto"></i>
+              </a>
+              <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li>
+                      <a href="{{ route('admin.insurance.index') }}">
+                          <i class="bi bi-circle"></i><span>Lista</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="{{ route('admin.insurance.create') }}">
+                          <i class="bi bi-circle"></i><span>Novo</span>
+                      </a>
+                  </li>
+
+              </ul>
+          </li><!-- End Charts Nav -->
 
           <li class="nav-item">
               <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -75,24 +95,8 @@
               </ul>
           </li><!-- End Tables Nav -->
 
-          <li class="nav-item">
-              <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                  <i class="bi bi-shield-check"></i><span>Seguradoras</span><i class="bi bi-chevron-down ms-auto"></i>
-              </a>
-              <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                  <li>
-                      <a href="charts-chartjs.html">
-                          <i class="bi bi-circle"></i><span>Lista</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="charts-apexcharts.html">
-                          <i class="bi bi-circle"></i><span>Novo</span>
-                      </a>
-                  </li>
 
-              </ul>
-          </li><!-- End Charts Nav -->
+
 
           <li class="nav-item">
               <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
@@ -218,7 +222,7 @@
 
 
           <li class="nav-item">
-              <a class="nav-link collapsed" href="pages-login.html">
+              <a class="nav-link collapsed" href="#">
                   <i class="bi bi-box-arrow-in-left"></i>
                   <span>Sair</span>
               </a>

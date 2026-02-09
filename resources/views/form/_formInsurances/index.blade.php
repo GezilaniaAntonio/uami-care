@@ -4,34 +4,32 @@
 
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-center mb-4">Adicionar Novo Utilizador</h5>
+                    <h5 class="card-title text-center mb-4">Adicionar Nova Seguradora</h5>
 
-                    <form method="POST" action="{{ route('admin.users.store') }}">
+                    <form method="POST" action="{{ route('admin.insurance.store') }}">
                         @csrf
 
                         <div class="row g-3"> <!-- grid para espaçamento -->
                             <div class="col-12">
-                                <input type="text" name="name" class="form-control" placeholder="Nome completo">
+                                <input type="text" name="name" class="form-control" placeholder="Nome da Seguradora" required>
                             </div>
 
                             <div class="col-12">
-                                <input type="email" name="email" class="form-control" placeholder="Email">
+                                <input type="email" name="email" class="form-control" placeholder="Email" >
                             </div>
 
                             <div class="col-12">
-                                <input type="password" name="password" class="form-control" placeholder="Senha">
+                                <input type="text" name="phone" class="form-control" placeholder="Telefone">
                             </div>
 
                             <div class="col-12">
-                                <input type="password" name="password_confirmation" class="form-control"
-                                    placeholder="Confirmar senha">
+                                <input type="text" name="address" class="form-control" placeholder="Endereço">
                             </div>
 
                             <div class="col-12">
-                                <select name="role" class="form-select">
-                                    <option value="">Selecionar função</option>
-                                    <option value="admin">Administrador</option>
-                                    <option value="user">Utilizador</option>
+                                <select name="active" class="form-select">
+                                    <option value="1" selected>Ativo</option>
+                                    <option value="0">Inativo</option>
                                 </select>
                             </div>
 
