@@ -1,38 +1,54 @@
-  <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">No Labels / Placeholders as labels Form</h5>
+<section class="section">
+    <div class="row justify-content-center">
+        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-12 px-2"> <!-- largura mais compacta -->
 
-              <!-- No Labels Form -->
-              <form class="row g-3">
-                <div class="col-md-12">
-                  <input type="text" class="form-control" placeholder="Your Name">
-                </div>
-                <div class="col-md-6">
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="col-md-6">
-                  <input type="password" class="form-control" placeholder="Password">
-                </div>
-                <div class="col-12">
-                  <input type="text" class="form-control" placeholder="Address">
-                </div>
-                <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="City">
-                </div>
-                <div class="col-md-4">
-                  <select id="inputState" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                  </select>
-                </div>
-                <div class="col-md-2">
-                  <input type="text" class="form-control" placeholder="Zip">
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
-              </form><!-- End No Labels Form -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4">Adicionar Novo Utilizador</h5>
 
+                    <form method="POST" action="{{ route('admin.users.store') }}">
+                        @csrf
+
+                        <div class="row g-3"> <!-- grid para espaçamento -->
+                            <div class="col-12">
+                                <input type="text" name="name" class="form-control" placeholder="Nome completo">
+                            </div>
+
+                            <div class="col-12">
+                                <input type="email" name="email" class="form-control" placeholder="Email">
+                            </div>
+
+                            <div class="col-12">
+                                <input type="password" name="password" class="form-control" placeholder="Senha">
+                            </div>
+
+                            <div class="col-12">
+                                <input type="password" name="password_confirmation" class="form-control"
+                                    placeholder="Confirmar senha">
+                            </div>
+
+                            <div class="col-12">
+                                <select name="role" class="form-select">
+                                    <option value="">Selecionar função</option>
+                                    <option value="admin">Administrador</option>
+                                    <option value="user">Utilizador</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn btn-primary me-2">
+                                    <i class="bi bi-save"></i> Cadastrar
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    Limpar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
             </div>
-          </div>
+
+        </div>
+    </div>
+</section>

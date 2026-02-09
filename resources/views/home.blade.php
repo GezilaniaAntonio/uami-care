@@ -16,7 +16,7 @@
 
                     {{ __('You are logged in!') }}
 
-                    <a href="{{ route('admin.dasboard')}}">Zaranza</a>
+                    <a href="{{ route('admin.dashboard')}}">Zaranza</a>
 
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->

@@ -27,6 +27,7 @@ class UserController extends Controller
     public function create()
     {
         //
+        return view('admin.user.create.index');
     }
 
     /**
@@ -35,10 +36,24 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+ public function store(Request $request)
+{
+    $request->validate([
+        'name'     => 'required|string|max:255',
+        'email'    => 'required|email|unique:users,email',
+        'password' => 'required|string|min:6',
+    ]);
+
+    User::create([
+        'name'     => $request->name,
+        'email'    => $request->email,
+        'password' => $request->password,
+    ]);
+
+    return redirect()
+        ->route('admin.users.index')
+        ->with('success', 'Utilizador criado com sucesso!');
+}
 
     /**
      * Display the specified resource.
@@ -49,6 +64,8 @@ class UserController extends Controller
     public function show($id)
     {
         //
+        $response['user'] = User::findOrFail($id);
+        return view('admin.user.show.index', $response);
     }
 
     /**
@@ -60,6 +77,8 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+        $response['user'] = User::findOrFail($id);
+        return view('admin.user.edit.index', $response);
     }
 
     /**
