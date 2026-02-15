@@ -5,102 +5,86 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Spatie\Activitylog\Models\Activity;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('role:admin')->except(['show', 'edit', 'update']);
+    }
+
     public function index()
     {
-        $response['users'] = User::orderByDesc('created_at')->get();
+        $response['users'] = User::all();
+
         return view('admin.user.list.index', $response);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
         return view('admin.user.create.index');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
- public function store(Request $request)
-{
-    $request->validate([
-        'name'     => 'required|string|max:255',
-        'email'    => 'required|email|unique:users,email',
-        'password' => 'required|string|min:6',
-    ]);
-
-    User::create([
-        'name'     => $request->name,
-        'email'    => $request->email,
-        'password' => $request->password,
-    ]);
-
-    return redirect()
-        ->route('admin.users.index')
-        ->with('success', 'Utilizador criado com sucesso!');
-}
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function store(Request $request)
     {
-        //
-        $response['user'] = User::findOrFail($id);
-        return view('admin.user.show.index', $response);
+        /* User::create($request->all()); */
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => ['required', 'string', 'in:admin,editor,user'],
+        ], [
+            'password.confirmed' => 'As senhas não coincidem.',
+            'email.unique' => 'Este e-mail já está em uso.',
+            'name.required' => 'O nome é obrigatório.',
+            'email.required' => 'O e-mail é obrigatório.',
+            'password.required' => 'A senha é obrigatória.',
+            'password.min' => 'A senha deve ter no mínimo 8 caracteres.',
+            'role.required' => 'O papel do usuário é obrigatório.',
+        ]);
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->role = $request->role;
+
+        $user->save();
+
+        return redirect()->route('admin.users.index')->with('success', 'Cadastrado com sucesso!');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function show($id)
     {
-        //
         $response['user'] = User::findOrFail($id);
+        return view('admin.user.details.index', $response);
+    }
+
+    public function edit(User $user)
+    {
+
+        $response['user'] =  $user;
         return view('admin.user.edit.index', $response);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        if(Auth::id() !== $user->id && !(Auth::user()->role === 'admin')) {
+            return redirect()->route('admin.users.index')->with('error', 'You do not have permission to edit this user.');
+        }
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'role' => $request->role,  
+        ]);
+        return redirect()->route('admin.users.index')->with('success', 'User updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('admin.users.index')->with('success', 'User deleted successfully.');
     }
 }

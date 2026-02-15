@@ -1,7 +1,6 @@
 @extends('layouts.merge.dashboard')
 
 @section('content')
-<main id="main" class="main">
 
     <div class="pagetitle">
         <h1>Lista de Seguradoras</h1>
@@ -83,5 +82,4 @@
             </div>
         </div>
     </section>
-</main>
 @endsection

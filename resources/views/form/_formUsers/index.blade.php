@@ -1,3 +1,10 @@
+@php
+    $roles = [
+        'admin' => 'Administrador',
+        'employee' => 'Funcionário',
+        'client' => 'Cliente'
+    ];
+@endphp
 <section class="section">
     <div class="row justify-content-center">
         <div class="col-xl-5 col-lg-6 col-md-8 col-sm-12 px-2"> <!-- largura mais compacta -->
@@ -11,11 +18,11 @@
 
                         <div class="row g-3"> <!-- grid para espaçamento -->
                             <div class="col-12">
-                                <input type="text" name="name" class="form-control" placeholder="Nome completo">
+                                <input type="text" name="name" class="form-control" value="{{ old('name', $user->name ?? '')}}" placeholder="Nome completo">
                             </div>
 
                             <div class="col-12">
-                                <input type="email" name="email" class="form-control" placeholder="Email">
+                                <input type="email" name="email" class="form-control" value="{{ old('email', $user->email ?? '')}}" placeholder="Email">
                             </div>
 
                             <div class="col-12">
@@ -29,9 +36,11 @@
 
                             <div class="col-12">
                                 <select name="role" class="form-select">
-                                    <option value="">Selecionar função</option>
-                                    <option value="admin">Administrador</option>
-                                    <option value="user">Utilizador</option>
+                                    @foreach ($roles as $value => $label)
+                                    <option value="{{ $value }}" {{ ($user->role ?? '') === $value ? 'selected' : '' }}>
+                                        {{ $label }}
+                                    </option>
+                                @endforeach
                                 </select>
                             </div>
 

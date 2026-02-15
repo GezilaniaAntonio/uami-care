@@ -1,8 +1,6 @@
 @extends('layouts.merge.dashboard')
 
 @section('content')
-    <main id="main" class="main">
-
         <div class="pagetitle">
             <h1>Lista de Planos</h1>
             <nav>
@@ -89,6 +87,4 @@
                 </div>
             </div>
         </section>
-
-    </main>
 @endsection

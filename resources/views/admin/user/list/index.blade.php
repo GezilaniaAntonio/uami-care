@@ -1,13 +1,12 @@
 @extends('layouts.merge.dashboard')
 
 @section('content')
-    <main id="main" class="main">
 
         <div class="pagetitle">
             <h1>Lista de Utilizadores</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
                     <li class="breadcrumb-item active">Utilizadores</li>
                 </ol>
             </nav>

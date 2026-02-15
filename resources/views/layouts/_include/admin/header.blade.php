@@ -46,7 +46,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="javascript:void(0);" class="logo d-flex align-items-center">
                 <img src="{{ asset('admin/assets/img/uami.png') }}" alt="UAMI CARE" width="100" height="100">
 
                 {{-- <span class="d-none d-lg-block">NiceAdmin</span> --}}
